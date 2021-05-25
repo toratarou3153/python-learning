@@ -42,16 +42,17 @@ def main():
     y = move(xs)
     l = [[] for _ in range(100)]
     t = 0
-    while T(t)>0.1 :
-        for i in range(n_per):
+    while T(t)>0.5 :
+        for i in range(100):
             if dist(y) < dist(xs):
                 xs = y
                 l[i].append(xs)
             else :
-                j = A(i)
-                if j > 0.05:
-                    xs = y
-                    l[i].append(xs)
+                for k in range(n_per) :
+                    j = A(i)
+                    if j > 0.05:
+                        xs = y
+                        l[i].append(xs)
     t = t+1
 
     print(min(l))

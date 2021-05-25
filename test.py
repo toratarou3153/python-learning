@@ -32,8 +32,8 @@ random.shuffle(xs)
 
 
 
-x = np.linspace(-10,10,100)
-y= 1/(1+np.exp(1/x))
+x = np.linspace(0,10,100)
+y= 1/np.log(x+2)
 plt.plot(x,y)
 plt.show()
 
