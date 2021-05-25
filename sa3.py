@@ -6,15 +6,13 @@ import numpy as np
 from scipy.spatial import distance
 import math
 
-uni = pd.read_csv('campas.txt')
-init_cam = list(uni['name'])
-init_lon = list(uni['Longitude'])
-init_lat = list(uni['Latitude'])
-init_hig = list(uni['hight'])
-random.shuffle(init_cam)
+#uni = pd.read_csv('campas.txt')
+#init_cam = list(uni['name'])
+#init_lon = list(uni['Longitude'])
+#init_lat = list(uni['Latitude'])
+#init_hig = list(uni['hight'])
+#random.shuffle(init_cam)
 
-xs = [["1号館",32,45,4],["2号館",52,63,45],["3号館",44,76,67],["4号館",19,23,65],["5号館",65,57,27]]
-random.shuffle(xs)
 
 def dist(xss: list)->float :
     d = 0
@@ -34,26 +32,28 @@ def T(t):
     return T
 
 def A(T):
-    A = 1/(1+math.ex(1/T))
+    A = 1/(1+math.exp(1/(T+1)))
+    return A
 
 def main():
-    Tp = T(0)
+    xs = [["1号館",32,45,4],["2号館",52,63,45],["3号館",44,76,67],["4号館",19,23,65],["5号館",65,57,27]]
+    random.shuffle(xs)
     n_per = 10
     y = move(xs)
-    #while T(t)>0.001 :
-    #if dist(y) < dist(x):
-        #x = y
-    #else :
-        #for i in range(n_per):
-        #print("だめです")
+    l = [[] for _ in range(100)]
+    t = 0
+    while T(t)>0.1 :
+        for i in range(n_per):
+            if dist(y) < dist(xs):
+                xs = y
+                l[i].append(xs)
+            else :
+                j = A(i)
+                if j > 0.05:
+                    xs = y
+                    l[i].append(xs)
+    t = t+1
 
-
-            #j = A(Tp)
-            #if juri >=juri_hanntei :
-                #x = y
-    #t = t+1
-    print(init_cam)
-    print(xs)
-    print(move(xs))
+    print(min(l))
 if __name__ == '__main__':
     main()
