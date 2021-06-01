@@ -1,7 +1,7 @@
 def main():
     # input
     N=int(input())
-    ss = [input() for _ in range(N)]
+    ss = [input() for _ in range(N)]#複数の行に複数の入力
 
     # compute
     cuts=[0,0,0,0]

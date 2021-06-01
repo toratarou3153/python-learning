@@ -1,12 +1,12 @@
 def bubble_sort(As :list)->list:
     for i in range(len(As)-1):
-        for j in range(len(As)-i+1):
+        for j in range(len(As)-i-1):
             if As[j]>As[j+1]:
                 As[j],As[j+1] = As[j+1],As[j]
     return As
 def main():
     # input
-    As = list(map(int,input().split()))
+    As = list(map(int,input().split())) #map関数はlistの要素すべてにアクセスする。
 
     # compute
 
