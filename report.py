@@ -40,7 +40,7 @@ class TravellingSalesmanProblem(Annealer):
         return e
 
 
-mat = uni[['Latitude', 'Longitude','tate']].values
+mat = uni[['Latitude', 'Longitude']].values
 dist_mat = distance.cdist(mat, mat, metric='euclidean')
 distance_matrix = {}
 for i, name in enumerate(uni['name']):
