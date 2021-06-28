@@ -2,10 +2,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # データ生成
-y = np.array([50,60,100,80,75,0])
-x = np.array([0,20,40,60,80,100])
-y1 = np.array([100,70,50,40,35,0])
-x1 = np.array([0,20,40,60,80,100])
+y = np.array([50,60,100,80,75])
+x = np.array([1,2,3,4,5])
+y1 = np.array([100,70,50,40,35])
+x1 = np.array([1,2,3,4,5])
 # プロット領域(Figure, Axes)の初期化
 fig = plt.figure(figsize=(12, 8))
 ax1 = fig.add_subplot(421)
@@ -36,6 +36,6 @@ ax7.set_title("title7")
 ax8.plot(x,y, marker="$a$", linewidth= 2, linestyle = "dashed")
 ax8.set_title("title8")
 
-
+plt.xticks([ 1,2,3,4,5 ])
 plt.tight_layout()
 plt.show()
