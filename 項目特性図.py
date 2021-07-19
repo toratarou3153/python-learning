@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import japanize_matplotlib
 import numpy as np
 import pandas as pd
 #------------データの読み込み----------------------
@@ -18,15 +19,15 @@ for i in range(30):
     data_i = list(df.loc[i])
     if data_i[1] == 1:
         cut[i] += 1
-    if data_i[2] == 3:
+    if data_i[2] == 4:
         cut[i] += 1
-    if data_i[3] == 4:
+    if data_i[3] == 3:
         cut[i] += 1
-    if data_i[4] == 4:
+    if data_i[4] == 3:
         cut[i] += 1
-    if data_i[5] == 4:
+    if data_i[5] == 3:
         cut[i] += 1
-    if data_i[6] == 3:
+    if data_i[6] == 1:
         cut[i] += 1
     if data_i[7] == 2:
         cut[i] += 1
@@ -34,7 +35,7 @@ for i in range(30):
         cut[i] += 1
 #-----------合計をもとに得点順に並び替える------------------
 # zipで一つの変数"zip_lists"にまとめる
-# ソートの基準としたいリスト(ここではscores)を一番左においてzip
+# ソートの基準としたいリスト(ここではcut)を一番左においてzip
 zip_lists = zip(cut,data_1,data_A,data_B,data_C,data_D,data_E,data_F,data_G,data_H)
 # 昇順でソート
 zip_sort = sorted(zip_lists)
@@ -43,11 +44,11 @@ cut,data_1,data_A,data_B,data_C,data_D,data_E,data_F,data_G,data_H= zip(*zip_sor
 
 #----------問題の答え-------------
 data_A_ans = 1
-data_B_ans = 3
-data_C_ans = 4
-data_D_ans = 4
-data_E_ans = 4
-data_F_ans = 3
+data_B_ans = 4
+data_C_ans = 3
+data_D_ans = 3
+data_E_ans = 3
+data_F_ans = 1
 data_G_ans = 2
 data_H_ans = 4
 #--------------合計点によって郡に分ける------------------
@@ -391,56 +392,56 @@ ax1.plot(x,y_A_1, marker="$a$", linewidth= 2, linestyle = "dashed")
 ax1.plot(x,y_A_2, marker="$b$", linewidth= 2, linestyle = "dashed")
 ax1.plot(x,y_A_3, marker="$c$", linewidth= 2, linestyle = "solid")
 ax1.plot(x,y_A_4, marker="$d$", linewidth= 2, linestyle = "dashed")
-ax1.set_title("A")
+ax1.set_title("教育史(a)")
 #(B)
 ax2 = fig.add_subplot(422)
 ax2.plot(x,y_B_1, marker="$a$", linewidth= 2, linestyle = "dashed")
 ax2.plot(x,y_B_2, marker="$b$", linewidth= 2, linestyle = "solid")
 ax2.plot(x,y_B_3, marker="$c$", linewidth= 2, linestyle = "dashed")
 ax2.plot(x,y_B_4, marker="$d$", linewidth= 2, linestyle = "dashed")
-ax2.set_title("B")
+ax2.set_title("教育史(b)")
 #(C)
 ax3 = fig.add_subplot(423)
 ax3.plot(x,y_C_1, marker="$a$", linewidth= 2, linestyle = "dashed")
 ax3.plot(x,y_C_2, marker="$b$", linewidth= 2, linestyle = "solid")
 ax3.plot(x,y_C_3, marker="$c$", linewidth= 2, linestyle = "dashed")
 ax3.plot(x,y_C_4, marker="$d$", linewidth= 2, linestyle = "dashed")
-ax3.set_title("C")
+ax3.set_title("教育原理")
 #(D)
 ax4 = fig.add_subplot(424)
 ax4.plot(x,y_D_1, marker="$a$", linewidth= 2, linestyle = "dashed")
 ax4.plot(x,y_D_2, marker="$b$", linewidth= 2, linestyle = "solid")
 ax4.plot(x,y_D_3, marker="$c$", linewidth= 2, linestyle = "dashed")
 ax4.plot(x,y_D_4, marker="$d$", linewidth= 2, linestyle = "dashed")
-ax4.set_title("D")
+ax4.set_title("教育法規[1]")
 #(E)
 ax5 = fig.add_subplot(425)
 ax5.plot(x,y_E_1, marker="$a$", linewidth= 2, linestyle = "dashed")
 ax5.plot(x,y_E_2, marker="$b$", linewidth= 2, linestyle = "solid")
 ax5.plot(x,y_E_3, marker="$c$", linewidth= 2, linestyle = "dashed")
 ax5.plot(x,y_E_4, marker="$d$", linewidth= 2, linestyle = "dashed")
-ax5.set_title("E")
+ax5.set_title("教育法規[2]")
 #(F)
 ax6 = fig.add_subplot(426)
 ax6.plot(x,y_F_1, marker="$a$", linewidth= 2, linestyle = "dashed")
 ax6.plot(x,y_F_2, marker="$b$", linewidth= 2, linestyle = "solid")
 ax6.plot(x,y_F_3, marker="$c$", linewidth= 2, linestyle = "dashed")
 ax6.plot(x,y_F_4, marker="$d$", linewidth= 2, linestyle = "dashed")
-ax6.set_title("F")
+ax6.set_title("教育心理(a)")
 #(G)
 ax7 = fig.add_subplot(427)
 ax7.plot(x,y_G_1, marker="$a$", linewidth= 2, linestyle = "dashed")
 ax7.plot(x,y_G_2, marker="$b$", linewidth= 2, linestyle = "solid")
 ax7.plot(x,y_G_3, marker="$c$", linewidth= 2, linestyle = "dashed")
 ax7.plot(x,y_G_4, marker="$d$", linewidth= 2, linestyle = "dashed")
-ax7.set_title("G")
+ax7.set_title("教育心理(b)")
 #(H)
 ax8 = fig.add_subplot(428)
 ax8.plot(x,y_H_1, marker="$a$", linewidth= 2, linestyle = "dashed")
 ax8.plot(x,y_H_2, marker="$b$", linewidth= 2, linestyle = "dashed")
 ax8.plot(x,y_H_3, marker="$c$", linewidth= 2, linestyle = "dashed")
 ax8.plot(x,y_H_4, marker="$d$", linewidth= 2, linestyle = "solid")
-ax8.set_title("D")
+ax8.set_title("教育心理(c)")
 #----------グラフの生成----------
 plt.xticks([ 1,2,3,4,5 ])
 plt.tight_layout()
