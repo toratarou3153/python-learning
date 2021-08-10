@@ -6,18 +6,18 @@ import matplotlib.pyplot as plt
 
 #点の数
 n = 47
-print("　都市の数：" + str(n))
+print(" 都市の数：" + str(n))
 #クラスタリング・スケジュール(温度関数)の定数
 c = 30
 #クラスタリング・スケジュール(温度関数)の上界
-end = 10000
+end = 10000    #ここを変更
 #摂動回数の設定
-k = 400
+k = 400   #ここを変更
 
 
 #クラスタリング・スケジュール(温度関数)の設定---------------------------------------------------------------------------------
 def T(temper):
-    return c/(math.sqrt(temper)+1)
+    return c/(math.sqrt(temper)+1)  #ここを変更
 
 #初めにめぐる点の順番--------------------------------------------------------------------------------------------------------
 city = [i for i in range(n)]
@@ -75,8 +75,8 @@ for t in range(end):
             if m == 1:
                 city = city_near
 
-print("　　最小値：" + str(d(city)))
-print("　　　順番：" + str(city))
+print("最小値：" + str(d(city)))
+print("順番：" + str(city))
 
 x = [x_y[i][0] for i in city]
 y = [x_y[j][1] for j in city]
