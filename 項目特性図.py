@@ -14,7 +14,7 @@ data_F = list(df["問題F"][:30])
 data_G = list(df["問題G"][:30])
 data_H = list(df["問題H"][:30])
 #----------------------合計を算出してリスト化-----------------
-cut = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+cut = [0 for i in range(30)]
 for i in range(30):
     data_i = list(df.loc[i])
     if data_i[1] == 1:
@@ -110,6 +110,7 @@ data_H_5 = data_H[n+19:n+25]
 #--------------問題に対して正しい選択肢を選んだ確率------------------
 #(A)
 #(a)
+data_A = [[data_A_i] for i in range(4)]
 data_A_1_theta_1 = int(format(data_A_1.count(1))) / len(data_A_1)
 data_A_2_theta_1 = int(format(data_A_2.count(1))) / len(data_A_2)
 data_A_3_theta_1 = int(format(data_A_3.count(1))) / len(data_A_3)
