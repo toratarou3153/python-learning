@@ -30,9 +30,11 @@ import time
 
 Token = 'Ev98TioEKI2oWPTYGWW9i0fNTJF5Zu9ETUG6LlGHh42'
 api_url = 'https://notify-api.line.me/api/notify'
-send_contents = '虎太郎さん 課題についての報告です。'
-
+send_contents_1 = '虎太郎さん \n日付を超えたらゼミの資料を印刷してください\n'
+send_contents_2 ='結婚式の日のホテルの予約をしてください。'
 Token_dic = {'Authorization': 'Bearer' + ' ' + Token}
-send_dic = {'message':send_contents}
-
-requests.post(api_url,headers = Token_dic,data = send_dic)
+send_dic_1 = {'message':send_contents_1}
+send_dic_2 = {'message':send_contents_2}
+cut =[send_dic_1,send_dic_2]
+for i in range(2):
+    requests.post(api_url,headers = Token_dic,data = cut[i])
