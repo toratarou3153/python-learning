@@ -30,8 +30,8 @@ import time
 
 Token = 'Ev98TioEKI2oWPTYGWW9i0fNTJF5Zu9ETUG6LlGHh42'
 api_url = 'https://notify-api.line.me/api/notify'
-send_contents_1 = '虎太郎さん \n日付を超えたらゼミの資料を印刷してください\n'
-send_contents_2 ='結婚式の日のホテルの予約をしてください。'
+send_contents_1 = '虎太郎さん \n9時30分受付で健康診断です。\n\n15時半から美容室です。\n\nできるならその間に学校に行けるとよいです。\n\nMリーグはパイレーツが出ます\n'
+send_contents_2 ='残っている課題は、TA作業と確率統計の発表です。。'
 Token_dic = {'Authorization': 'Bearer' + ' ' + Token}
 send_dic_1 = {'message':send_contents_1}
 send_dic_2 = {'message':send_contents_2}
